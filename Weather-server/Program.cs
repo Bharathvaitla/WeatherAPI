@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 builder.Services.AddHttpClient<WeatherService>();
-//builder.Services.AddScoped<WeatherService>();
+builder.Services.AddScoped<WeatherService>(); 
 
 var key = Encoding.UTF8.GetBytes("averylongsecretkeyoflength256bits");
 
@@ -46,9 +46,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
